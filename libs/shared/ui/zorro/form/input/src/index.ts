@@ -1,1 +1,1 @@
-export * from './lib/input.module';
+export * from './public_api'
