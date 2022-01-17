@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 
-import {NgZorroAntdModule} from '@hum/zorro/core';
+import { NgZorroAntdModule } from '@hum/zorro/core';
+import { FormlyFieldModule } from '@hum/zorro/form/field';
 import { FormlyFieldCascaderComponent } from './cascader.type';
 import { CascaderFormly } from './cascader.interface';
 
@@ -12,12 +13,13 @@ import { CascaderFormly } from './cascader.interface';
     CommonModule,
     ReactiveFormsModule,
     NgZorroAntdModule,
+    FormlyFieldModule,
     FormlyModule.forChild({
       types: [
         {
           name: 'cascader',
           component: FormlyFieldCascaderComponent,
-          wrappers: ['form-field'],
+          wrappers: ['field'],
           defaultOptions: {
             className: 'ant-col  ant-col-12',
             templateOptions: {
@@ -39,11 +41,7 @@ import { CascaderFormly } from './cascader.interface';
       ],
     }),
   ],
-    declarations: [
-      FormlyFieldCascaderComponent
-  ],
-  exports: [
-    FormlyFieldCascaderComponent
-  ],
+  declarations: [FormlyFieldCascaderComponent],
+  exports: [FormlyFieldCascaderComponent],
 })
 export class FormlyCascaderModule {}
