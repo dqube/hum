@@ -1,1 +1,1 @@
-export * from './lib/input-group.module';
+export * from './public_api'

@@ -110,6 +110,9 @@ import { FormlyFieldInputComponent } from './input.type';
         },
       ],
     }),
+    ],
+  exports: [
+    FormlyFieldInputComponent
   ],
 })
 export class FormlyNzInputModule {}
