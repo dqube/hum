@@ -1,1 +1,1 @@
-export * from './lib/time.module';
+export * from './public_api';

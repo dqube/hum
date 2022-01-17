@@ -1,1 +1,1 @@
-export * from './lib/transfer.module';
+export * from './public_api'

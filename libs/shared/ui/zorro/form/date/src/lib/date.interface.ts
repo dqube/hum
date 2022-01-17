@@ -1,6 +1,4 @@
 import { TemplateRef } from '@angular/core';
-import { FunctionProp, NzSafeAny } from 'ng-zorro-antd/core/types';
-import { NzDateMode } from 'ng-zorro-antd/date-picker';
 
 export interface BaseDateFormly {
   /**
@@ -46,7 +44,7 @@ export interface BaseDateFormly {
    * 选择模式
    * @default 'date'
    */
-  mode?: NzDateMode;
+  mode?: any;
 
   /**
    * 额外的弹出日历样式
@@ -54,13 +52,6 @@ export interface BaseDateFormly {
    */
   popupStyle?: object;
 
-  /**
-   * 在面板中添加额外的页脚
-   */
-  renderExtraFooter?:
-    | TemplateRef<NzSafeAny>
-    | string
-    | FunctionProp<TemplateRef<NzSafeAny> | string>;
 
   /**
    * 自定义的后缀图标

@@ -1,1 +1,1 @@
-export * from './lib/tabs.module';
+export * from './public_api'

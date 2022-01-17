@@ -1,1 +1,1 @@
-export * from './lib/tree-select.module';
+export * from './public_api'

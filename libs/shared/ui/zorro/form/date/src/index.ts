@@ -1,1 +1,1 @@
-export * from './lib/date.module';
+export * from './public_api';

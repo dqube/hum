@@ -1,1 +1,1 @@
-export * from './lib/rate.module';
+export * from './public_api'

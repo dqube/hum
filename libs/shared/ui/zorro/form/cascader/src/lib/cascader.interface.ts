@@ -1,5 +1,4 @@
 import { TemplateRef } from '@angular/core';
-import { NzCascaderOption, NzShowSearchOptions } from 'ng-zorro-antd/cascader';
 
 export interface CascaderFormly {
   /**
@@ -73,11 +72,6 @@ export interface CascaderFormly {
   notFoundContent?: string | TemplateRef<void>;
 
   /**
-   * 选项的渲染模板
-   */
-  optionRender?: TemplateRef<{ $implicit: NzCascaderOption; index: number }>;
-
-  /**
    * 是否显示箭头
    */
   showArrow?: boolean;
@@ -90,7 +84,7 @@ export interface CascaderFormly {
   /**
    * 是否支持搜索，默认情况下对 label 进行全匹配搜索，不能和 [nzLoadData] 同时使用
    */
-  showSearch?: boolean | NzShowSearchOptions;
+  showSearch?: boolean;
 
   /**
    * 自定义的选择框后缀图标
@@ -115,9 +109,4 @@ export interface CascaderFormly {
    * 菜单浮层的显示/隐藏
    */
   visibleChange?: (visible: boolean) => void;
-
-  /**
-   * 值发生变化时触发
-   */
-  selectionChange?: (value: NzCascaderOption[]) => void;
 }

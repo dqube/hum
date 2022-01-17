@@ -1,1 +1,1 @@
-export * from './lib/select.module';
+export * from './public_api'

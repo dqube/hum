@@ -1,5 +1,5 @@
-import { EventEmitter, TemplateRef } from '@angular/core';
-import { AutocompleteDataSource } from 'ng-zorro-antd/auto-complete';
+import { TemplateRef } from "@angular/core";
+
 
 export interface InputFormly {
   /**
@@ -127,7 +127,7 @@ export interface AutocompleteFormly extends InputFormly {
   /**
    * 自动完成的数据源
    */
-  dataSource?: AutocompleteDataSource;
+  dataSource?: any;
 
   /**
    * 使用键盘选择选项的时候，会把当前高亮项的值即时回填到输入框中

@@ -1,1 +1,1 @@
-export * from './lib/switch.module';
+export * from './public_api';
