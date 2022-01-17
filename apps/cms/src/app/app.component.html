@@ -1,0 +1,32 @@
+<nz-layout>
+  <nz-header>
+    Angular Formly ❤️ NG-ZORRO
+  </nz-header>
+
+    <nz-breadcrumb>
+      <nz-breadcrumb-item>Formly</nz-breadcrumb-item>
+      <nz-breadcrumb-item>UI</nz-breadcrumb-item>
+      <nz-breadcrumb-item>NG-ZORRO</nz-breadcrumb-item>
+    </nz-breadcrumb>
+    <div class="inner-content" *ngIf="fields" >    
+      <!-- <form
+      nz-form
+      [nzLayout]="'vertical'"
+      [formGroup]="form"
+     
+    >   
+    <formly-form
+    [form]="form"
+    [model]="model"
+    [fields]="fields"
+  ></formly-form>
+  <button nz-button nzType="primary" type="submit">Submit</button>
+  <button nz-button nzType="danger" type="reset">Reset</button>
+      
+    </form> -->
+    <hum-form  [form]="form" [model]="model"
+    [fields]="fields" (formSubmit)="onSubmit($event)"></hum-form>
+  
+    </div>  
+    
+</nz-layout>

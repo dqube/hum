@@ -1,0 +1,14 @@
+{
+  "name": "@hum/zorro/form",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^13.1.0",
+    "@angular/core": "^13.1.0",
+    "@ngx-formly/core": "^6.0.0-next.6",
+    "ng-zorro-antd": "^13.0.0",
+    "@hum/zorro/core":"0.0.1"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

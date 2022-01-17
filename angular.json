@@ -1,0 +1,331 @@
+{
+  "version": 1,
+  "projects": {
+    "cms": {
+      "projectType": "application",
+      "root": "apps/cms",
+      "sourceRoot": "apps/cms/src",
+      "prefix": "hum",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/cms",
+            "index": "apps/cms/src/index.html",
+            "main": "apps/cms/src/main.ts",
+            "polyfills": "apps/cms/src/polyfills.ts",
+            "tsConfig": "apps/cms/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["apps/cms/src/favicon.ico", "apps/cms/src/assets"],
+            "styles": ["apps/cms/src/styles.less", "apps/cms/src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules/"]
+            },
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/cms/src/environments/environment.ts",
+                  "with": "apps/cms/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "cms:build:production"
+            },
+            "development": {
+              "browserTarget": "cms:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "cms:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/cms/src/**/*.ts",
+              "apps/cms/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/cms"],
+          "options": {
+            "jestConfig": "apps/cms/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "cms-e2e": {
+      "root": "apps/cms-e2e",
+      "sourceRoot": "apps/cms-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/cms-e2e/cypress.json",
+            "devServerTarget": "cms:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "cms:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/cms-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["cms"]
+    },
+    "shared-ui-zorro-core": {
+      "projectType": "library",
+      "root": "libs/shared/ui/zorro/core",
+      "sourceRoot": "libs/shared/ui/zorro/core/src",
+      "prefix": "hum",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/shared/ui/zorro/core"],
+          "options": {
+            "project": "libs/shared/ui/zorro/core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/ui/zorro/core/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/shared/ui/zorro/core/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/zorro/core"],
+          "options": {
+            "jestConfig": "libs/shared/ui/zorro/core/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/zorro/core/src/**/*.ts",
+              "libs/shared/ui/zorro/core/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["zorro", "core"]
+    },
+    "shared-ui-zorro-form": {
+      "projectType": "library",
+      "root": "libs/shared/ui/zorro/form",
+      "sourceRoot": "libs/shared/ui/zorro/form/src",
+      "prefix": "form",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/shared/ui/zorro/form"],
+          "options": {
+            "project": "libs/shared/ui/zorro/form/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/ui/zorro/form/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/shared/ui/zorro/form/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/zorro/form"],
+          "options": {
+            "jestConfig": "libs/shared/ui/zorro/form/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/zorro/form/src/**/*.ts",
+              "libs/shared/ui/zorro/form/src/**/*.html",
+              "libs/shared/ui/zorro/form/field/**/*.ts",
+              "libs/shared/ui/zorro/form/field/**/*.html",
+              "libs/shared/ui/zorro/form/card/**/*.ts",
+              "libs/shared/ui/zorro/form/card/**/*.html",
+              "libs/shared/ui/zorro/form/cascader/**/*.ts",
+              "libs/shared/ui/zorro/form/cascader/**/*.html",
+              "libs/shared/ui/zorro/form/checkbox/**/*.ts",
+              "libs/shared/ui/zorro/form/checkbox/**/*.html",
+              "libs/shared/ui/zorro/form/date/**/*.ts",
+              "libs/shared/ui/zorro/form/date/**/*.html",
+              "libs/shared/ui/zorro/form/input/**/*.ts",
+              "libs/shared/ui/zorro/form/input/**/*.html",
+              "libs/shared/ui/zorro/form/input-group/**/*.ts",
+              "libs/shared/ui/zorro/form/input-group/**/*.html",
+              "libs/shared/ui/zorro/form/radio/**/*.ts",
+              "libs/shared/ui/zorro/form/radio/**/*.html",
+              "libs/shared/ui/zorro/form/rate/**/*.ts",
+              "libs/shared/ui/zorro/form/rate/**/*.html",
+              "libs/shared/ui/zorro/form/select/**/*.ts",
+              "libs/shared/ui/zorro/form/select/**/*.html",
+              "libs/shared/ui/zorro/form/slider/**/*.ts",
+              "libs/shared/ui/zorro/form/slider/**/*.html",
+              "libs/shared/ui/zorro/form/switch/**/*.ts",
+              "libs/shared/ui/zorro/form/switch/**/*.html",
+              "libs/shared/ui/zorro/form/tabs/**/*.ts",
+              "libs/shared/ui/zorro/form/tabs/**/*.html",
+              "libs/shared/ui/zorro/form/time/**/*.ts",
+              "libs/shared/ui/zorro/form/time/**/*.html",
+              "libs/shared/ui/zorro/form/transfer/**/*.ts",
+              "libs/shared/ui/zorro/form/transfer/**/*.html",
+              "libs/shared/ui/zorro/form/tree-select/**/*.ts",
+              "libs/shared/ui/zorro/form/tree-select/**/*.html",
+              "libs/shared/ui/zorro/form/upload/**/*.ts",
+              "libs/shared/ui/zorro/form/upload/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["zorro", "form", "controls"]
+    },
+    "web-form": {
+      "projectType": "library",
+      "root": "libs/web/form",
+      "sourceRoot": "libs/web/form/src",
+      "prefix": "hum",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/web/form"],
+          "options": {
+            "project": "libs/web/form/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/web/form/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/web/form/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/form"],
+          "options": {
+            "jestConfig": "libs/web/form/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/form/src/**/*.ts",
+              "libs/web/form/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["form", "zorro"]
+    },
+    "web-forms": {
+      "projectType": "library",
+      "root": "libs/web/forms",
+      "sourceRoot": "libs/web/forms/src",
+      "prefix": "hum",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/web/forms"],
+          "options": {
+            "project": "libs/web/forms/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/web/forms/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/web/forms/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/forms"],
+          "options": {
+            "jestConfig": "libs/web/forms/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/forms/src/**/*.ts",
+              "libs/web/forms/src/**/*.html",
+              "libs/web/forms/form/**/*.ts",
+              "libs/web/forms/form/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["zorro", "forms"]
+    }
+  }
+}
