@@ -7,7 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
-import { FormlyNgZorroModule } from '@hum/form';
+import { FormlyNgZorroModule } from '@hum/zorro/form';
 //import { FormlyZorroModule } from '@hum/zorro/form';
 import { FormlyModule } from '@ngx-formly/core';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';

@@ -16,43 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@hum/form": ["libs/web/form/src/index.ts"],
-      "@hum/zorro/core": ["libs/shared/ui/zorro/core/src/index.ts"],
-      "@hum/zorro/form": ["libs/shared/ui/zorro/form/src/index.ts"],
-      "@hum/zorro/form/card": ["libs/shared/ui/zorro/form/card/src/index.ts"],
-      "@hum/zorro/form/cascader": [
-        "libs/shared/ui/zorro/form/cascader/src/index.ts"
-      ],
-      "@hum/zorro/form/checkbox": [
-        "libs/shared/ui/zorro/form/checkbox/src/index.ts"
-      ],
-      "@hum/zorro/form/date": ["libs/shared/ui/zorro/form/date/src/index.ts"],
-      "@hum/zorro/form/field": ["libs/shared/ui/zorro/form/field/src/index.ts"],
-      "@hum/zorro/form/input": ["libs/shared/ui/zorro/form/input/src/index.ts"],
-      "@hum/zorro/form/input-group": [
-        "libs/shared/ui/zorro/form/input-group/src/index.ts"
-      ],
-      "@hum/zorro/form/radio": ["libs/shared/ui/zorro/form/radio/src/index.ts"],
-      "@hum/zorro/form/rate": ["libs/shared/ui/zorro/form/rate/src/index.ts"],
-      "@hum/zorro/form/select": [
-        "libs/shared/ui/zorro/form/select/src/index.ts"
-      ],
-      "@hum/zorro/form/slider": [
-        "libs/shared/ui/zorro/form/slider/src/index.ts"
-      ],
-      "@hum/zorro/form/switch": [
-        "libs/shared/ui/zorro/form/switch/src/index.ts"
-      ],
-      "@hum/zorro/form/tabs": ["libs/shared/ui/zorro/form/tabs/src/index.ts"],
-      "@hum/zorro/form/time": ["libs/shared/ui/zorro/form/time/src/index.ts"],
-      "@hum/zorro/form/transfer": [
-        "libs/shared/ui/zorro/form/transfer/src/index.ts"
-      ],
-      "@hum/zorro/form/tree-select": [
-        "libs/shared/ui/zorro/form/tree-select/src/index.ts"
-      ],
-      "@hum/zorro/form/upload": [
-        "libs/shared/ui/zorro/form/upload/src/index.ts"
-      ]
+      "@hum/zorro/form": ["libs/shared/ui/zorro/form/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

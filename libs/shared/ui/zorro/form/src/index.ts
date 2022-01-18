@@ -1,1 +1,1 @@
-export * from './lib/form.module';
+export * from './lib/formly-ng-zorro.module';

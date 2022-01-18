@@ -123,53 +123,11 @@
       "tags": [],
       "implicitDependencies": ["cms"]
     },
-    "shared-ui-zorro-core": {
-      "projectType": "library",
-      "root": "libs/shared/ui/zorro/core",
-      "sourceRoot": "libs/shared/ui/zorro/core/src",
-      "prefix": "hum",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "outputs": ["dist/libs/shared/ui/zorro/core"],
-          "options": {
-            "project": "libs/shared/ui/zorro/core/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/shared/ui/zorro/core/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/shared/ui/zorro/core/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/ui/zorro/core"],
-          "options": {
-            "jestConfig": "libs/shared/ui/zorro/core/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/ui/zorro/core/src/**/*.ts",
-              "libs/shared/ui/zorro/core/src/**/*.html"
-            ]
-          }
-        }
-      },
-      "tags": ["zorro", "core"]
-    },
     "shared-ui-zorro-form": {
       "projectType": "library",
       "root": "libs/shared/ui/zorro/form",
       "sourceRoot": "libs/shared/ui/zorro/form/src",
-      "prefix": "form",
+      "prefix": "hum",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
@@ -200,46 +158,12 @@
           "options": {
             "lintFilePatterns": [
               "libs/shared/ui/zorro/form/src/**/*.ts",
-              "libs/shared/ui/zorro/form/src/**/*.html",
-              "libs/shared/ui/zorro/form/field/**/*.ts",
-              "libs/shared/ui/zorro/form/field/**/*.html",
-              "libs/shared/ui/zorro/form/card/**/*.ts",
-              "libs/shared/ui/zorro/form/card/**/*.html",
-              "libs/shared/ui/zorro/form/cascader/**/*.ts",
-              "libs/shared/ui/zorro/form/cascader/**/*.html",
-              "libs/shared/ui/zorro/form/checkbox/**/*.ts",
-              "libs/shared/ui/zorro/form/checkbox/**/*.html",
-              "libs/shared/ui/zorro/form/date/**/*.ts",
-              "libs/shared/ui/zorro/form/date/**/*.html",
-              "libs/shared/ui/zorro/form/input/**/*.ts",
-              "libs/shared/ui/zorro/form/input/**/*.html",
-              "libs/shared/ui/zorro/form/input-group/**/*.ts",
-              "libs/shared/ui/zorro/form/input-group/**/*.html",
-              "libs/shared/ui/zorro/form/radio/**/*.ts",
-              "libs/shared/ui/zorro/form/radio/**/*.html",
-              "libs/shared/ui/zorro/form/rate/**/*.ts",
-              "libs/shared/ui/zorro/form/rate/**/*.html",
-              "libs/shared/ui/zorro/form/select/**/*.ts",
-              "libs/shared/ui/zorro/form/select/**/*.html",
-              "libs/shared/ui/zorro/form/slider/**/*.ts",
-              "libs/shared/ui/zorro/form/slider/**/*.html",
-              "libs/shared/ui/zorro/form/switch/**/*.ts",
-              "libs/shared/ui/zorro/form/switch/**/*.html",
-              "libs/shared/ui/zorro/form/tabs/**/*.ts",
-              "libs/shared/ui/zorro/form/tabs/**/*.html",
-              "libs/shared/ui/zorro/form/time/**/*.ts",
-              "libs/shared/ui/zorro/form/time/**/*.html",
-              "libs/shared/ui/zorro/form/transfer/**/*.ts",
-              "libs/shared/ui/zorro/form/transfer/**/*.html",
-              "libs/shared/ui/zorro/form/tree-select/**/*.ts",
-              "libs/shared/ui/zorro/form/tree-select/**/*.html",
-              "libs/shared/ui/zorro/form/upload/**/*.ts",
-              "libs/shared/ui/zorro/form/upload/**/*.html"
+              "libs/shared/ui/zorro/form/src/**/*.html"
             ]
           }
         }
       },
-      "tags": ["zorro", "form", "controls"]
+      "tags": ["zorro", "form"]
     },
     "web-form": {
       "projectType": "library",
