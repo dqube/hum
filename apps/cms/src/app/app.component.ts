@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/member-ordering */
-import { Component,  OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
+import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 import { TransferItem } from 'ng-zorro-antd/transfer';
-import { Subject } from 'rxjs';
 import { UserService } from './user.service';
 @Component({
   selector: 'hum-root',
@@ -19,7 +18,6 @@ export class AppComponent implements OnInit {
   model: any = {};
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[];
-  private readonly onDestroy = new Subject<void>();
   constructor(private userService: UserService) {}
   
   ngOnInit(): void {
@@ -143,10 +141,13 @@ export class AppComponent implements OnInit {
     // console.log(f);
   }
 
-  onSubmit(evt) {
+  // onSubmit(evt) {
   
-      console.log(JSON.stringify(this.model, null, 2));
+  //     console.log(JSON.stringify(this.model, null, 2));
   
-  }
-  
+  // }
+  onSubmit() {  
+    console.log(JSON.stringify(this.model));
+
+}
 }

@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import {NgZorroAntdModule} from '@hum/zorro/core';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormlyModule } from '@ngx-formly/core';
+import { NgZorroAntdModule } from '@hum/zorro/core';
 import { FormlyFieldModule } from '@hum/zorro/form/field';
-import { FormlyFieldSelectComponent } from './select.type';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlySelectModule } from '@ngx-formly/core/select';
 import { SelectFormly } from './select.interface';
+import { FormlyFieldSelectComponent } from './select.type';
+
 
 @NgModule({
   declarations: [FormlyFieldSelectComponent],
@@ -15,6 +16,7 @@ import { SelectFormly } from './select.interface';
     ReactiveFormsModule,
     NgZorroAntdModule,
     FormlyFieldModule,
+    FormlySelectModule,
     FormlyModule.forChild({
       types: [
         {
@@ -47,4 +49,4 @@ import { SelectFormly } from './select.interface';
     }),
   ],
 })
-export class FormlySelectModule {}
+export class FormlyNzSelectModule {}

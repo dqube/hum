@@ -146,7 +146,22 @@
       }
     }
   },
- 
+  {
+    "key": "radio",
+    "type": "radio",
+    "className": "ant-col  ant-col-8",
+    "defaultValue": "Apple",
+    "templateOptions": {
+      "required": true,
+      "label": "radio",
+      "type": "button",
+      "radio": {
+        "buttonStyle": "solid",
+        "name": "test"
+      },
+      "options": ""
+    }
+  },
   {
     "key": "rate",
     "type": "rate",
@@ -159,7 +174,24 @@
       }
     }
   },
-
+  {
+    "key": "fruit",
+    "type": "select",
+    "className": "ant-col  ant-col-8",
+    "templateOptions": {
+      "placeholder": "select any fruit",
+      "label": "select",
+      "multiple": true,
+      "options": "",
+      "select": {
+        "showArrow": true,
+        "showSearch": true,
+        "allowClear": true,
+        "loading": false,
+        "maxMultipleCount": 2
+      }
+    }
+  },
   {
     "key": "slider",
     "type": "slider",
@@ -180,14 +212,14 @@
       "switch": {}
     }
   },
- 
   {
     "key": "date",
     "type": "date",
     "className": "ant-col  ant-col-8",
     "templateOptions": {
       "placeholder": "123123123123",
-      "label": "date",      
+      "label": "date",
+      "spanLabelFixed": 100,
       "date": {
         "mode": "date",
         "showTime": true
@@ -226,43 +258,24 @@
     "templateOptions": {
       "placeholder": ["123", "sdf"],
       "label": "time",
+      "spanLabelFixed": 100,
       "time": {}
     }
   },
   {
-    "key": "radio",
-    "type": "radio",
+    "key": "transfer",
+    "type": "transfer",
     "className": "ant-col  ant-col-8",
-    "defaultValue": "Apple",
+    "defaultValue": ["1", "2", "3"],
     "templateOptions": {
+      "label": "transfer",
       "required": true,
-      "label": "radio",
-      "type": "button",
-      "radio": {
-        "buttonStyle": "solid",
-        "name": "test"
-      },
-      "options": ""
-    }
-  },
-  {
-    "key": "fruit",
-    "type": "select",
-    "className": "ant-col  ant-col-8",
-    "templateOptions": {
-      "placeholder": "select any fruit",
-      "label": "select",
-      "multiple": true,
-      "options": "",
-      "select": {
-        "showArrow": true,
-        "showSearch": true,
-        "allowClear": true,
-        "loading": false,
-        "maxMultipleCount": 2
+      "transfer": {
+        "targetKeys": ["4", "5"]
       }
     }
   },
+
   {
     "key": "tree-select",
     "type": "tree-select",
@@ -287,5 +300,129 @@
         "action": "https://localhost:44310/WeatherForecast1"
       }
     }
+  },
+  {
+    "className": "ant-col  ant-col-8",
+    "fieldGroupClassName": "ant-row",
+    "templateOptions": {
+      "card": {
+        "title": "Card form"
+      }
+    },
+    "wrappers": ["card"],
+    "fieldGroup": [
+      {
+        "className": "ant-col  ant-col-8",
+        "type": "input",
+        "key": "firstName",
+        "templateOptions": {
+          "label": "First Name"
+        }
+      },
+      {
+        "className": "ant-col  ant-col-8",
+        "type": "input",
+        "key": "lastName",
+        "templateOptions": {
+          "label": "Last Name"
+        }
+      }
+    ]
+  },
+  {
+    "type": "tabs",
+    "templateOptions": {
+      "tabs": {
+        "tabPosition": "top"
+      }
+    },
+    "fieldGroup": [
+      {
+        "templateOptions": {
+          "label": "Personal data",
+
+          "tab": {
+            "disabled": true
+          }
+        },
+        "fieldGroup": [
+          {
+            "key": "firstname",
+            "type": "input",
+            "templateOptions": {
+              "label": "First name",
+              "required": true
+            }
+          },
+          {
+            "key": "age",
+            "type": "input",
+            "templateOptions": {
+              "type": "number",
+              "label": "Age",
+              "required": true,
+              "number": {
+                "step": 2,
+                "precision": 1,
+                "width": "100%"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "templateOptions": { "label": "Destination" },
+        "fieldGroup": [
+          {
+            "key": "country",
+            "type": "input",
+            "templateOptions": {
+              "label": "Country",
+              "required": true
+            }
+          }
+        ]
+      },
+      {
+        "templateOptions": { "label": "Day of the trip" },
+        "fieldGroup": [
+          {
+            "key": "day",
+            "type": "date",
+            "templateOptions": {
+              "type": "date",
+              "label": "Day of the trip",
+              "required": true
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "wrappers": ["input-group"],
+    "className": "ant-col  ant-col-8",
+
+    "templateOptions": {
+      "label": "input-group",
+      "required": true
+    },
+    "fieldGroup": [
+      {
+        "type": "input",
+        "key": "inputtest1",
+        "templateOptions": {
+          "required": true
+        },
+        "expressionProperties": {}
+      },
+      {
+        "type": "input",
+        "key": "inputtest2",
+        "templateOptions": {
+          "required": true
+        }
+      }
+    ]
   }
 ]

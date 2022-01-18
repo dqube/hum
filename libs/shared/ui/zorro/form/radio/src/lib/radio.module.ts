@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import {NgZorroAntdModule} from '@hum/zorro/core';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormlyModule } from '@ngx-formly/core';
+import { NgZorroAntdModule } from '@hum/zorro/core';
 import { FormlyFieldModule } from '@hum/zorro/form/field';
-import { FormlyFieldRadioComponent} from './radio.type'
+import { FormlyModule } from '@ngx-formly/core';
 import { RadioFormly } from './radio.interface';
+import { FormlyFieldRadioComponent } from './radio.type';
+
 @NgModule({
   declarations: [FormlyFieldRadioComponent],
   imports: [
@@ -34,4 +34,4 @@ import { RadioFormly } from './radio.interface';
   ],
   exports:[FormlyFieldRadioComponent]
 })
-export class FormlyNzRadioModule {}
+export class FormlyRadioModule {}

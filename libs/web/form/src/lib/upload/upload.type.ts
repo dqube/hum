@@ -1,9 +1,5 @@
 import {
-  Component,
-  ChangeDetectionStrategy,
-  AfterViewInit,
-  ViewChild,
-  OnInit,
+  ChangeDetectionStrategy, Component, OnInit
 } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
 

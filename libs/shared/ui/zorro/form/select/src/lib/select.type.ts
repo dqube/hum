@@ -1,6 +1,5 @@
 import {
-  Component,
-  ChangeDetectionStrategy 
+  ChangeDetectionStrategy, Component
 } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
 
@@ -42,12 +41,10 @@ import { FieldType } from '@ngx-formly/core';
       "
       (nzOnSearch)="to['select']?.onSearch && to['select']?.onSearch($event)"
     >
-      <ng-container
-      *ngFor="let item of to.options  | async"
-      >
-        <nz-option-group *ngIf="item.group" [nzLabel]="item.label">
+    <ng-container *ngFor="let option of to.options | formlySelectOptions: field | async">
+        <nz-option-group *ngIf="option.group" [nzLabel]="option.label">
           <nz-option
-            *ngFor="let child of item.group"
+            *ngFor="let child of option.group"
             [nzValue]="child.value"
             [nzDisabled]="child.disabled"
             [nzLabel]="child.label"
@@ -55,10 +52,10 @@ import { FieldType } from '@ngx-formly/core';
           </nz-option>
         </nz-option-group>
         <nz-option
-          *ngIf="!item.group"
-          [nzValue]="item.value"
-          [nzDisabled]="item.disabled"
-          [nzLabel]="item.label"
+          *ngIf="!option.group"
+          [nzValue]="option.value"
+          [nzDisabled]="option.disabled"
+          [nzLabel]="option.label"
         ></nz-option>
       </ng-container>
     </nz-select>

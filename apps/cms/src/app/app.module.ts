@@ -1,25 +1,25 @@
+import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import en from '@angular/common/locales/en';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormlyModule } from '@ngx-formly/core';
-import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzFormModule } from 'ng-zorro-antd/form';
-import { registerLocaleData } from '@angular/common';
-import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
-import en from '@angular/common/locales/en';
-import { NzCardModule } from 'ng-zorro-antd/card';
-import { NZ_ICONS } from 'ng-zorro-antd/icon';
-import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
+//import { FormlyNgZorroModule } from '@hum/form';
+import { FormlyZorroModule } from '@hum/zorro/form';
+import { FormlyModule } from '@ngx-formly/core';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
-import { HttpClientModule } from '@angular/common/http';
-import { FormlyNgZorroModule } from '@hum/form';
-import { TestComponent } from './test/test.component.ts/test/test.component';
+import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n';
+import { NZ_ICONS } from 'ng-zorro-antd/icon';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { AppComponent } from './app.component';
+import { NxWelcomeComponent } from './nx-welcome.component';
 registerLocaleData(en);
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -28,7 +28,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
   (key) => antDesignIcons[key]
 );
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent, TestComponent],
+  declarations: [AppComponent, NxWelcomeComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -42,7 +42,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     FormlyModule.forRoot(),
     NzGridModule,
     NzCardModule,
-    FormlyNgZorroModule,
+    //FormlyNgZorroModule,
+    FormlyZorroModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

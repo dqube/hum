@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { DateFormly, RangeDateFormly } from '.';
 import { FormlyNzFormFieldModule } from '../form-field/form-field.module';
 import { FormlyFieldDate } from './date.type';
-import { DateFormly, RangeDateFormly } from '.';
 @NgModule({
   declarations: [FormlyFieldDate],
   imports: [

@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import {NgZorroAntdModule} from '@hum/zorro/core';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormlyModule } from '@ngx-formly/core';
+import { NgZorroAntdModule } from '@hum/zorro/core';
 import { FormlyFieldModule } from '@hum/zorro/form/field';
+import { FormlyModule } from '@ngx-formly/core';
 import { TransferFormly } from './transfer.interface';
 import { FormlyFieldTransferComponent } from './transfer.type';
+
 
 
 @NgModule({
@@ -29,8 +29,7 @@ import { FormlyFieldTransferComponent } from './transfer.type';
               transfer: {
                 dataSource: [],
                 titles: ['', ''],
-                operations: ['', ''],
-                renderList: [null, null],
+              
                 listStyle: {},
               } as TransferFormly,
             },

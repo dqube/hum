@@ -1,13 +1,9 @@
 import {
-  Component,
-  ChangeDetectionStrategy,
-  AfterViewInit,
-  ViewChild,
-  OnInit,
+  ChangeDetectionStrategy, Component
 } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
 @Component({
-  selector: 'formly-field-upload',
+  selector: 'form-tree-select',
   template: `
     <nz-tree-select
       [formControl]="formControl"
@@ -28,7 +24,6 @@ import { FieldType } from '@ngx-formly/core';
       [nzNodes]="to['treeSelect']?.nodes"
       [nzDefaultExpandAll]="to['treeSelect']?.defaultExpandAll"
       [nzExpandedKeys]="to['treeSelect']?.expandedKeys"
-      [nzDisplayWith]="to['treeSelect']?.displayWith"
       [nzMaxTagCount]="to['treeSelect']?.maxTagCount"
       [nzMaxTagPlaceholder]="to['treeSelect']?.maxTagPlaceholder"
       [nzTreeTemplate]="to['treeSelect']?.treeTemplate"
@@ -44,6 +39,5 @@ import { FieldType } from '@ngx-formly/core';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormlyFieldTreeSelectComponent extends FieldType implements OnInit {
-  ngOnInit(): void {}
+export class FormlyFieldTreeSelectComponent extends FieldType{
 }

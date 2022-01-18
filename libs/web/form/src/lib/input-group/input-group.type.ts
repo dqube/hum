@@ -1,12 +1,7 @@
 import {
-  Component,
-  ChangeDetectionStrategy,
-  Optional,
-  ElementRef,
-  Renderer2,
+  ChangeDetectionStrategy, Component
 } from '@angular/core';
-import { FieldArrayType, FieldType, FieldWrapper } from '@ngx-formly/core';
-import { NzFormDirective, NzFormItemComponent } from 'ng-zorro-antd/form';
+import { FieldWrapper } from '@ngx-formly/core';
 
 @Component({
   selector: 'formly-field-input-group',

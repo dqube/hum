@@ -1,6 +1,4 @@
-import { TemplateRef } from '@angular/core';
 
-import { Observable, Subscription } from 'rxjs';
 
 export interface UploadFormly {
   /**

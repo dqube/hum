@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormlyFieldInputGroup } from './input-group.type';
-import { NzInputModule } from 'ng-zorro-antd/input';
+import { NgModule } from '@angular/core';
 import { FormlyModule } from '@ngx-formly/core';
 import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputModule } from 'ng-zorro-antd/input';
 import { DirectiveModule } from '../directive/directive.module';
+import { FormlyFieldInputGroup } from './input-group.type';
 
 @NgModule({
   declarations: [FormlyFieldInputGroup],

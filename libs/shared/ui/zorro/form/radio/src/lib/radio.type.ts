@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
 
 @Component({
@@ -17,7 +17,7 @@ import { FieldType } from '@ngx-formly/core';
         <label
           nz-radio
           [nzValue]="option.value"
-          *ngFor="let option of to.options | formlySelectOptions: field | async"
+          *ngFor="let option of to.options | async"
           [nzDisabled]="option.disabled === true"
           >{{ option.label }}</label
         >
@@ -27,7 +27,7 @@ import { FieldType } from '@ngx-formly/core';
         <label
           nz-radio-button
           [nzValue]="option.value"
-          *ngFor="let option of to.options | formlySelectOptions: field | async"
+          *ngFor="let option of to.options | async"
           [nzDisabled]="option.disabled === true"
           >{{ option.label }}</label
         >

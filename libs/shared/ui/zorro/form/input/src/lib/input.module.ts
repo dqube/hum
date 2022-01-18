@@ -1,17 +1,17 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import {NgZorroAntdModule} from '@hum/zorro/core';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormlyModule } from '@ngx-formly/core';
+import { NgZorroAntdModule } from '@hum/zorro/core';
 import { FormlyFieldModule } from '@hum/zorro/form/field';
+import { FormlyModule } from '@ngx-formly/core';
 import {
   AutocompleteFormly,
   InputFormly,
   NumberFormly,
-  TextAreaFormly,
+  TextAreaFormly
 } from './input.interface';
 import { FormlyFieldInputComponent } from './input.type';
+
 @NgModule({
   declarations: [FormlyFieldInputComponent],
   imports: [
@@ -115,4 +115,4 @@ import { FormlyFieldInputComponent } from './input.type';
     FormlyFieldInputComponent
   ],
 })
-export class FormlyNzInputModule {}
+export class FormlyInputModule {}

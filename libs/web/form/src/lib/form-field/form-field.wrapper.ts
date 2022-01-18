@@ -1,6 +1,5 @@
 import {
-  Component,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy, Component
 } from '@angular/core';
 import { FieldWrapper } from '@ngx-formly/core';
 
