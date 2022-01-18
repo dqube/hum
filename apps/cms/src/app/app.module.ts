@@ -7,8 +7,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
-//import { FormlyNgZorroModule } from '@hum/form';
-import { FormlyZorroModule } from '@hum/zorro/form';
+import { FormlyNgZorroModule } from '@hum/form';
+//import { FormlyZorroModule } from '@hum/zorro/form';
 import { FormlyModule } from '@ngx-formly/core';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -42,8 +42,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     FormlyModule.forRoot(),
     NzGridModule,
     NzCardModule,
-    //FormlyNgZorroModule,
-    FormlyZorroModule
+    FormlyNgZorroModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

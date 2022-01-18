@@ -141,13 +141,13 @@ export class AppComponent implements OnInit {
     // console.log(f);
   }
 
-  // onSubmit(evt) {
+  onSubmit(evt) {
   
-  //     console.log(JSON.stringify(this.model, null, 2));
+      console.log(JSON.stringify(this.model, null, 2));
   
-  // }
-  onSubmit() {  
-    console.log(JSON.stringify(this.model));
+  }
+//   onSubmit() {  
+//     console.log(JSON.stringify(this.model));
 
-}
+// }
 }

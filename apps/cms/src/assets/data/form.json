@@ -1,11 +1,14 @@
 [
   {
-    "fieldGroupClassName": "ant-row",
+    "type": "grid",
+    "templateOptions": {
+      "span": 8
+    },
     "fieldGroup": [
       {
         "key": "firstName",
         "type": "input",
-        "className": "ant-col ant-col-xs-24 ant-col-xl-8 ant-form-item-space",
+        "className": "ant-col ant-col-xs-24 ant-col-xl-8",
         "templateOptions": {
           "label": "Enter your first name",
           "placeholder": "Enter your name",
@@ -21,7 +24,7 @@
       {
         "key": "lastName",
         "type": "input",
-        "className": "ant-col ant-col-xs-24 ant-col-xl-8 ant-form-item-space",
+        "className": "ant-col ant-col-xs-24 ant-col-xl-8",
         "templateOptions": {
           "label": "Enter your first name",
           "placeholder": "Enter your name",
@@ -40,7 +43,7 @@
       {
         "key": "password",
         "type": "input",
-        "className": "ant-col ant-col-xs-24 ant-col-xl-8 ant-form-item-space",
+        "className": "ant-col ant-col-xs-24 ant-col-xl-8",
         "templateOptions": {
           "type": "password",
           "label": "password",
@@ -57,12 +60,15 @@
     ]
   },
   {
-    "fieldGroupClassName": "ant-row",
+    "type": "grid",
+    "templateOptions": {
+      "span": 12
+    },
     "fieldGroup": [
       {
         "key": "desc",
         "type": "textarea",
-        "className": "ant-col ant-col-xs-24 ant-col-xl-8 ant-form-item-space",
+        "className": "ant-col ant-col-xs-24 ant-col-xl-12",
         "templateOptions": {
           "label": "Long Description",
           "required": true,
@@ -74,7 +80,7 @@
       {
         "key": "personage",
         "type": "number",
-        "className": "ant-col ant-col-xs-24 ant-col-xl-8 ant-form-item-space",
+        "className": "ant-col ant-col-xs-24 ant-col-xl-12",
         "templateOptions": {
           "label": "How old are you?",
           "placeholder": "Enter your age",
@@ -92,7 +98,7 @@
   {
     "key": "city",
     "type": "autoComplete",
-    "className": "ant-col  ant-col-8",
+    "className": "ant-col ant-col-xs-24 ant-col-xl-8",
     "templateOptions": {
       "label": "City",
       "placeholder": "Choose your city",
@@ -104,13 +110,16 @@
         "suffixIcon": "lock",
         "backfill": true,
         "defaultActiveFirstOption": true
+      },
+      "grid": {
+        "span": 8
       }
     }
   },
   {
     "key": "cascader",
     "type": "cascader",
-    "className": "ant-col  ant-col-8",
+    "className": "ant-col ant-col-xs-24 ant-col-xl-8",
     "defaultValue": ["zhejiang", "hangzhou", "xihu"],
     "templateOptions": {
       "label": "cascader",
@@ -118,19 +127,25 @@
       "cascader": {
         "expandTrigger": "hover",
         "expandIcon": "user"
+      },
+      "grid": {
+        "span": 8
       }
     }
   },
   {
     "key": "checkbox",
     "type": "checkbox",
-    "className": "ant-col  ant-col-8",
+    "className": "ant-col ant-col-xs-24 ant-col-xl-8",
     "templateOptions": {
       "label": "checkbox_group",
       "type": "group",
       "required": true,
       "options": "",
-      "checkbox": {}
+      "checkbox": {},
+      "grid": {
+        "span": 8
+      }
     }
   },
   {
@@ -146,7 +161,7 @@
       }
     }
   },
- 
+
   {
     "key": "rate",
     "type": "rate",
@@ -180,14 +195,14 @@
       "switch": {}
     }
   },
- 
+
   {
     "key": "date",
     "type": "date",
     "className": "ant-col  ant-col-8",
     "templateOptions": {
       "placeholder": "123123123123",
-      "label": "date",      
+      "label": "date",
       "date": {
         "mode": "date",
         "showTime": true
@@ -287,5 +302,129 @@
         "action": "https://localhost:44310/WeatherForecast1"
       }
     }
+  },
+  {
+    "className": "ant-col  ant-col-8",
+    "fieldGroupClassName": "ant-row",
+    "templateOptions": {
+      "card": {
+        "title": "Card form"
+      }
+    },
+    "wrappers": ["card"],
+    "fieldGroup": [
+      {
+        "className": "ant-col  ant-col-8",
+        "type": "input",
+        "key": "firstName",
+        "templateOptions": {
+          "label": "First Name"
+        }
+      },
+      {
+        "className": "ant-col  ant-col-8",
+        "type": "input",
+        "key": "lastName",
+        "templateOptions": {
+          "label": "Last Name"
+        }
+      }
+    ]
+  },
+  {
+    "type": "tabs",
+    "templateOptions": {
+      "tabs": {
+        "tabPosition": "top"
+      }
+    },
+    "fieldGroup": [
+      {
+        "templateOptions": {
+          "label": "Personal data",
+
+          "tab": {
+            "disabled": true
+          }
+        },
+        "fieldGroup": [
+          {
+            "key": "firstname",
+            "type": "input",
+            "templateOptions": {
+              "label": "First name",
+              "required": true
+            }
+          },
+          {
+            "key": "age",
+            "type": "input",
+            "templateOptions": {
+              "type": "number",
+              "label": "Age",
+              "required": true,
+              "number": {
+                "step": 2,
+                "precision": 1,
+                "width": "100%"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "templateOptions": { "label": "Destination" },
+        "fieldGroup": [
+          {
+            "key": "country",
+            "type": "input",
+            "templateOptions": {
+              "label": "Country",
+              "required": true
+            }
+          }
+        ]
+      },
+      {
+        "templateOptions": { "label": "Day of the trip" },
+        "fieldGroup": [
+          {
+            "key": "day",
+            "type": "date",
+            "templateOptions": {
+              "type": "date",
+              "label": "Day of the trip",
+              "required": true
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "wrappers": ["input-group"],
+    "className": "ant-col  ant-col-8",
+
+    "templateOptions": {
+      "label": "input-group",
+      "required": true
+    },
+    "fieldGroup": [
+      {
+        "type": "input",
+        "key": "inputtest1",
+        "templateOptions": {
+          "required": true
+        },
+        "expressionProperties": {}
+      },
+      {
+        "type": "input",
+        "key": "inputtest2",
+        "templateOptions": {
+          "required": true
+        }
+      }
+    ]
   }
 ]
