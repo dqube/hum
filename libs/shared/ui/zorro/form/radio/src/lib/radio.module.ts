@@ -19,7 +19,7 @@ import { RadioFormly } from './radio.interface';
         {
           name: 'radio',
           component: FormlyFieldRadioComponent,
-          wrappers: ['form-field'],
+          wrappers: ['field'],
           defaultOptions: {
             className: 'ant-col  ant-col-12',
             templateOptions: {

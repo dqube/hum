@@ -43,7 +43,7 @@ import { FieldType } from '@ngx-formly/core';
       (nzOnSearch)="to['select']?.onSearch && to['select']?.onSearch($event)"
     >
       <ng-container
-        *ngFor="let item of to.options | async"
+      *ngFor="let item of to.options  | async"
       >
         <nz-option-group *ngIf="item.group" [nzLabel]="item.label">
           <nz-option

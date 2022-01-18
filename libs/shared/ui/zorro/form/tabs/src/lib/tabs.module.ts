@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import {NgZorroAntdModule} from '@hum/zorro/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
-import { FormlyFieldModule } from '@hum/zorro/form/field';
 import { FormlyFieldTabsComponent } from './tabs.type';
 import { TabsFormly } from './tabs.interface';
 

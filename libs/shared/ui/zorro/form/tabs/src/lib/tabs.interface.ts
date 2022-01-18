@@ -1,9 +1,5 @@
 import { TemplateRef } from '@angular/core';
-import {
-  NzTabComponent,
-  NzTabsCanDeactivateFn,
-  TabTemplateContext,
-} from 'ng-zorro-antd/tabs';
+
 
 export interface TabsFormly {
   /**
@@ -71,7 +67,7 @@ export interface TabsFormly {
   /**
    * 决定一个 tab 是否可以被切换
    */
-  canDeactivate?: NzTabsCanDeactivateFn;
+  canDeactivate?: any;
 
   /**
    * 标签居中展示
@@ -84,17 +80,11 @@ export interface TabsFormly {
    */
   selectedIndexChange?: (index: number) => void;
 
-  /**
-   * 当前激活 tab 面板变更回调函数
-   */
-  selectChange?: (index: number, tab: NzTabComponent) => void;
+
 }
 
 export interface TabFormly {
-  /**
-   * 选项卡头显示文字
-   */
-  title?: string | TemplateRef<TabTemplateContext>;
+
 
   /**
    * 被隐藏时是否渲染 DOM 结构
