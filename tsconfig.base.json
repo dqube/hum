@@ -15,7 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@hum/form": ["libs/web/form/src/index.ts"],
       "@hum/zorro/form": ["libs/shared/ui/zorro/form/src/index.ts"]
     }
   },

@@ -18,6 +18,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n';
 import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 registerLocaleData(en);
@@ -42,7 +43,10 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     FormlyModule.forRoot(),
     NzGridModule,
     NzCardModule,
-    FormlyNgZorroModule
+    FormlyNgZorroModule,
+    NzLayoutModule,
+    NzPageHeaderModule,
+    NzBreadCrumbModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

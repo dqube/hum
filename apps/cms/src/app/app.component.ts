@@ -107,9 +107,9 @@ export class AppComponent implements OnInit {
       };
     }
     if (f.type === 'date' && f.templateOptions['date']) {
-      f.templateOptions['date']['onOpenChange'] = (value: boolean) => {
-        console.log(value);
-      };
+      
+     // f.templateOptions['date']['onOpenChange'] = "this.bindDate(true)";
+      f.templateOptions['date']['onOpenChange'] = (value: boolean) => {this.bindDate(value);};
       f.templateOptions['date']['onOk'] = (value: boolean) => {
         console.log(value);
       };
@@ -141,6 +141,10 @@ export class AppComponent implements OnInit {
     // console.log(f);
   }
 
+  bindDate(value:boolean){
+  console.log(value);
+  }
+  
   onSubmit(evt) {
   
       console.log(JSON.stringify(this.model, null, 2));

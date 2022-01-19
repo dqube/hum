@@ -9,6 +9,7 @@
       <nz-breadcrumb-item>NG-ZORRO</nz-breadcrumb-item>
     </nz-breadcrumb>
     <div class="inner-content" *ngIf="fields" >    
+
       <form
       nz-form
       [nzLayout]="'vertical'"
@@ -22,11 +23,11 @@
   ></formly-form>
   <button nz-button nzType="primary" type="submit">Submit</button>
   <button nz-button nzType="danger" type="reset">Reset</button>
-      
+ 
     </form>
     <!-- <hum-form  [form]="form" [model]="model"
     [fields]="fields" (formSubmit)="onSubmit($event)"></hum-form> -->
   
     </div>  
-    
+   
 </nz-layout>

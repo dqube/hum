@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, forkJoin, of, delay } from 'rxjs';
-import {  FormlyFieldConfig } from '@ngx-formly/core';
-import { FormlyhelperService } from '@hum/form'
+import { Injectable } from '@angular/core';
+import { FormlyFieldConfig } from '@ngx-formly/core';
+import { delay, forkJoin, Observable, of } from 'rxjs';
 
 @Injectable({
     // declares that this service should be created
@@ -10,7 +9,7 @@ import { FormlyhelperService } from '@hum/form'
     providedIn: 'root',
   })
 export class UserService {
-  constructor(private http: HttpClient,private helpr : FormlyhelperService) {}
+  constructor(private http: HttpClient) {}
 
   getUserData(): Observable<any> {
     
@@ -28,8 +27,8 @@ export class UserService {
     fields.map((f) => {
       if (f.type=== 'number') {
        // const numbr :NumberFormly=f.templateOptions?.['number'];
-       const numbr =this.helpr.bindFields(f);
-        console.log(numbr);
+      // const numbr =this.helpr.bindFields(f);
+      //  console.log(numbr);
        // f.templateOptions['number'] =numbr;
         
        console.log();

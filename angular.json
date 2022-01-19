@@ -164,48 +164,6 @@
         }
       },
       "tags": ["zorro", "form"]
-    },
-    "web-form": {
-      "projectType": "library",
-      "root": "libs/web/form",
-      "sourceRoot": "libs/web/form/src",
-      "prefix": "hum",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "outputs": ["dist/libs/web/form"],
-          "options": {
-            "project": "libs/web/form/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/web/form/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/web/form/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/form"],
-          "options": {
-            "jestConfig": "libs/web/form/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/web/form/src/**/*.ts",
-              "libs/web/form/src/**/*.html"
-            ]
-          }
-        }
-      },
-      "tags": ["form", "zorro"]
     }
   }
 }
