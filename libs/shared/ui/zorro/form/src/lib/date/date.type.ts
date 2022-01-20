@@ -46,7 +46,7 @@ import { FieldType } from '@ngx-formly/core';
         [nzPlaceHolder]="to.placeholder"
         [nzPopupStyle]="to.range?.popupStyle"
         [nzRenderExtraFooter]="to.range?.renderExtraFooter"
-        [nzSuffixIcon]="to.range?.suffixIcon"
+        [nzSuffixIcon]="to.date?.suffixIcon ? to.date?.suffixIcon : 'calendar'"
         [nzBorderless]="to.range?.borderless"
         [nzInline]="to.range?.inline"
         [nzDateRender]="to.range?.dateRender"

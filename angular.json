@@ -17,7 +17,15 @@
             "polyfills": "apps/cms/src/polyfills.ts",
             "tsConfig": "apps/cms/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["apps/cms/src/favicon.ico", "apps/cms/src/assets"],
+            "assets": [
+              "apps/cms/src/favicon.ico",
+              "apps/cms/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
+            ],
             "styles": ["apps/cms/src/styles.less", "apps/cms/src/styles.scss"],
             "stylePreprocessorOptions": {
               "includePaths": ["node_modules/"]
@@ -164,6 +172,48 @@
         }
       },
       "tags": ["zorro", "form"]
+    },
+    "shared-ui-zorro-page-header": {
+      "projectType": "library",
+      "root": "libs/shared/ui/zorro/page-header",
+      "sourceRoot": "libs/shared/ui/zorro/page-header/src",
+      "prefix": "hum",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/shared/ui/zorro/page-header"],
+          "options": {
+            "project": "libs/shared/ui/zorro/page-header/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/ui/zorro/page-header/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/shared/ui/zorro/page-header/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/zorro/page-header"],
+          "options": {
+            "jestConfig": "libs/shared/ui/zorro/page-header/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/zorro/page-header/src/**/*.ts",
+              "libs/shared/ui/zorro/page-header/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["'zorro", ""]
     }
   }
 }

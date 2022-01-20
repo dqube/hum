@@ -5,6 +5,7 @@ import { FormlyNzCascaderModule } from './cascader/cascader.module';
 import { FormlyNzCheckboxModule } from './checkbox/checkbox.module';
 import { FormlyNzDateModule } from './date/date.module';
 import { FormlyNzFormFieldModule } from './form-field/form-field.module';
+import { FormlyNzFormModule } from './form/form.module';
 import { FormlyNzGridModule } from './grid/grid.module';
 import { FormlyNzInputGroupModule } from './input-group/input-group.module';
 import { FormlyNzInputModule } from './input/input.module';
@@ -19,7 +20,6 @@ import { FormlyNzTimeModule } from './time/time.module';
 import { FormlyNzTransferModule } from './transfer/transfer.module';
 import { FormlyNzTreeSelectModule } from './tree-select/tree-select.module';
 import { FormlyNzUploadModule } from './upload/upload.module';
-
 
 @NgModule({
   declarations: [],
@@ -43,8 +43,10 @@ import { FormlyNzUploadModule } from './upload/upload.module';
     NzFormModule,
     FormlyNzTabsModule,
     FormlyNzInputGroupModule,
-    FormlyNzGridModule
+    FormlyNzGridModule,
+    FormlyNzFormModule,
+  
   ],
-  exports: [],
+  exports: [FormlyNzFormModule],
 })
 export class FormlyNgZorroModule {}

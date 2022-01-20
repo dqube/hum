@@ -1,16 +1,13 @@
 import {
-    Component,
-    ChangeDetectionStrategy,
-    Input,
-    EventEmitter,
-    Output
-  } from '@angular/core';
-  import { FormArray, FormGroup } from '@angular/forms';
-  import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
+  ChangeDetectionStrategy, Component, EventEmitter, Input, Output
+} from '@angular/core';
+import { FormArray, FormGroup } from '@angular/forms';
+import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
   
   @Component({
     selector: 'hum-form',
     template: `
+ <hum-page-header></hum-page-header>
     <form
       nz-form
       [nzLayout]="'vertical'"

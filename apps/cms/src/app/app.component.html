@@ -10,7 +10,7 @@
     </nz-breadcrumb>
     <div class="inner-content" *ngIf="fields" >    
 
-      <form
+      <!-- <form
       nz-form
       [nzLayout]="'vertical'"
       [formGroup]="form"
@@ -24,9 +24,9 @@
   <button nz-button nzType="primary" type="submit">Submit</button>
   <button nz-button nzType="danger" type="reset">Reset</button>
  
-    </form>
-    <!-- <hum-form  [form]="form" [model]="model"
-    [fields]="fields" (formSubmit)="onSubmit($event)"></hum-form> -->
+    </form> -->
+    <hum-form  [form]="form" [model]="model"
+    [fields]="fields" (formSubmit)="onSubmit($event)"></hum-form>
   
     </div>  
    
