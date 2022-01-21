@@ -26,12 +26,12 @@ import { FieldWrapper } from '@ngx-formly/core';
     </nz-form-item>  -->
     <nz-form-item>
       <ng-container *ngIf="to.label && to['hideLabel'] !== true">
-        <nz-form-label [nzRequired]="to.required && to.hideRequiredMarker !== true" [nzFor]="id" [nzFlex]="formState?.labelWidth || '25px'">
+        <nz-form-label [nzRequired]="to.required && to.hideRequiredMarker !== true" [nzFor]="id" [nzFlex]="'25px'">
           {{ to.label }}
         </nz-form-label>
       </ng-container>
       <ng-container *ngIf="to['hideLabel']">
-        <nz-form-label [nzFor]="id" [nzFlex]="formState?.labelWidth || '100px'" [nzNoColon]="true"></nz-form-label>
+        <nz-form-label [nzFor]="id" [nzFlex]="'25px'" [nzNoColon]="true"></nz-form-label>
       </ng-container>
       <nz-form-control [nzValidateStatus]="errorState" [nzErrorTip]="errorTpl" nzFlex="1">
         <ng-container #fieldComponent></ng-container>

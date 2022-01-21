@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@hum/core/lookup": ["libs/shared/ui/lookup/src/index.ts"],
       "@hum/zorro/form": ["libs/shared/ui/zorro/form/src/index.ts"],
       "@hum/zorro/page-header": [
         "libs/shared/ui/zorro/page-header/src/index.ts"

@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { LookupService } from '@hum/core/lookup';
 import { FormlyFieldConfig } from '@ngx-formly/core';
-import { delay, forkJoin, Observable, of } from 'rxjs';
+import { delay, forkJoin, mergeMap, Observable, of } from 'rxjs';
 
 @Injectable({
     // declares that this service should be created
@@ -9,13 +10,45 @@ import { delay, forkJoin, Observable, of } from 'rxjs';
     providedIn: 'root',
   })
 export class UserService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private lookup: LookupService) {}
 
   getUserData(): Observable<any> {
     
     return forkJoin([this.getUser(), this.getFields()]);
   }
-
+getFieldsMultiple(){
+  this.http
+      .get<FormlyFieldConfig[]>('assets/data/form.json')
+      .pipe(
+        mergeMap((fields) => {
+          return this.lookup._getCodeLookup(fields)
+        })
+      )
+      .subscribe((result) => console.log('merged: ', result));
+//   this.httpClient
+//   .get('https://jsonplaceholder.typicode.com/posts/1')
+//   .pipe(
+//     mergeMap((res: any) =>
+//       this.httpClient.get(
+//         'https://jsonplaceholder.typicode.com/users/' + res.userId
+//       )
+//     )
+//   )
+//   .subscribe((authorDetails: any) => {
+//     this.userDetails = authorDetails;
+//     console.log(authorDetails);
+//   });
+// this.httpClient
+//   .get('https://jsonplaceholder.typicode.com/posts/1')
+//   .pipe(
+//     switchMap((fields: any) =>
+//       this.httpClient
+//         .get('https://jsonplaceholder.typicode.com/users/' + fields.userId)
+//         .pipe(map((lookup) => ({ fields, lookup })))
+//     )
+//   )
+//   .subscribe((result) => console.log('merged: ', result));
+}
   getUser()  {
     return this.http.get<{ firstName: string, lastName: string }>('assets/data/user.json');
   }

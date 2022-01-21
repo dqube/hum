@@ -268,6 +268,7 @@
       "placeholder": "select any fruit",
       "label": "select",
       "multiple": true,
+      "lookup": { "id": 1, "desc": "sample", "categoryId": 1 },
       "options": "",
       "select": {
         "showArrow": true,

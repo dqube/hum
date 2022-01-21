@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/member-ordering */
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { lookup, LookupService } from '@hum/core/lookup';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 import { TransferItem } from 'ng-zorro-antd/transfer';
 import { UserService } from './user.service';
@@ -16,12 +17,21 @@ export class AppComponent implements OnInit {
   list: TransferItem[] = [];
   form: FormGroup;
   model: any = {};
-  options: FormlyFormOptions = {};
+  options: FormlyFormOptions = {
+    formState :{ 
+      labelWidth:'25px',
+      layout:'vertical'
+    }
+    
+  };
   fields: FormlyFieldConfig[];
-  constructor(private userService: UserService) {}
+  lookups: lookup[];
+  constructor(private userService: UserService, private lookup: LookupService) {}
   
   ngOnInit(): void {
+    this.userService.getFieldsMultiple();
     this.getFields();
+    
     for (let i = 0; i < 20; i++) {
       this.list.push({
         key: i.toString(),
@@ -29,17 +39,30 @@ export class AppComponent implements OnInit {
         disabled: i % 3 < 1,
       });
     }
+    // console.log('get lookups')
+    // this.getlookups(this.fields);
+    // console.log(this.lookups);
+  }
+
+  getlookups(fields :FormlyFieldConfig[]) {
+    this.lookup._getCodeLookup(fields);
   }
 
   getFields(): void {
     this.userService.getUserData().subscribe(([model, fields]) => {
       this.form = new FormGroup({});
       this.model = model;
-     //this.userService.bindEvents(fields);
       this.fields = this.mapFields(fields);
-      //this.fields=fields;
 
     });
+    // this.userService.getUserData().subscribe(([model, fields]) => {
+    //   this.form = new FormGroup({});
+    //   this.model = model;
+    //  //this.userService.bindEvents(fields);
+    //   this.fields = this.mapFields(fields);
+    //   //this.fields=fields;
+
+    // });
     
   }
   /**
@@ -58,7 +81,9 @@ export class AppComponent implements OnInit {
      }
       this.bindEvents(f);    
       return f;
-    });    
+    })
+    
+    ;    
   }
 
  

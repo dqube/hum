@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
+import { LookupModule } from '@hum/core/lookup';
 import { FormlyNgZorroModule } from '@hum/zorro/form';
 //import { FormlyZorroModule } from '@hum/zorro/form';
 import { FormlyModule } from '@ngx-formly/core';
@@ -21,7 +22,6 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
-registerLocaleData(en);
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
 };
@@ -47,6 +47,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     NzLayoutModule,
     NzPageHeaderModule,
     NzBreadCrumbModule,
+    LookupModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
