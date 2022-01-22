@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   list: TransferItem[] = [];
   form: FormGroup;
   model: any = {};
+  
   options: FormlyFormOptions = {
     formState :{ 
       labelWidth:'25px',
@@ -26,10 +27,52 @@ export class AppComponent implements OnInit {
   };
   fields: FormlyFieldConfig[];
   lookups: lookup[];
+  headers :any = {
+    title: 'Welcome back, Nichols!',
+    subtitle: 'Project Manager',
+    buttons: [
+      {
+        title: 'New Project',
+        size: "default",
+        shape: 'round',
+        tooltip: 'test',
+        type: 'primary',
+        icon:'plus'
+      },
+      {
+        title: '',
+        size: "default",
+        shape: 'circle',
+        tooltip: 'test',
+        type: 'primary',
+        icon:'download'
+      },
+    ],
+    radiobuttons: [
+      {
+        title: 'cardView',
+        size: "default",
+        shape: 'round',
+        tooltip: 'Card View',
+        type: 'primary',
+        icon:'appstore',
+        tooltipplacement:'bottom'
+      },
+      {
+        title: 'listView',
+        size: "default",
+        shape: 'circle',
+        tooltip: 'List View',
+        type: 'primary',
+        icon:'ordered-list',
+        tooltipplacement:'bottom'
+      },
+    ],
+  };
   constructor(private userService: UserService, private lookup: LookupService) {}
   
   ngOnInit(): void {
-    this.userService.getFieldsMultiple();
+   // this.userService.getFieldsMultiple();
     this.getFields();
     
     for (let i = 0; i < 20; i++) {
@@ -44,9 +87,7 @@ export class AppComponent implements OnInit {
     // console.log(this.lookups);
   }
 
-  getlookups(fields :FormlyFieldConfig[]) {
-    this.lookup._getCodeLookup(fields);
-  }
+ 
 
   getFields(): void {
     this.userService.getUserData().subscribe(([model, fields]) => {

@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { headerOptions } from '..';
 
 @Component({
   selector: 'hum-page-header',
@@ -8,27 +9,23 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-5">
-                <h5 class="m-b-0">Welcome back, Nichols!</h5>
-                <span class="text-gray">Project Manager</span>
+                <h5 class="m-b-0">{{headers?.title}}</h5>
+                <span class="text-gray">{{headers?.subtitle}}</span>
                     
                 </div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="text-md-right m-v-10">
-                <nz-radio-group class="m-r-10">
-                    <label nz-radio-button nzValue="cardView" nzTooltipTitle="Card View" nzTooltipPlacement="bottom" nz-tooltip>
-                        <i class="font-size-16" nz-icon nzType="appstore" theme="outline"></i>
-                    </label>
-                    <label nz-radio-button nzValue="listView" nzTooltipTitle="List View" nzTooltipPlacement="bottom" nz-tooltip>
-                        <i class="font-size-16" nz-icon nzType="ordered-list" theme="outline"></i>
-                    </label>
+                <nz-radio-group class="m-r-10" *ngIf="headers?.radiobuttons">
+                    <label nz-radio-button [nzValue]="button.title" nzTooltipTitle="button.tooltip" nzTooltipPlacement="button.tooltipplacement" nz-tooltip *ngFor="let button of headers?.radiobuttons">
+                        <i class="font-size-16" nz-icon [nzType]="button.icon" theme="outline"></i>
+                    </label>                   
                 </nz-radio-group> 
-                
-                <button nz-button nzType="primary" nzShape="round" class="m-r-10"> <i nz-icon nzType="plus"></i>
-                    <span>New Project</span></button>
-                    <button nz-button nzType="primary"  nzShape="circle" class="m-r-10"><i nz-icon nzType="download"></i></button>
-                   
+                <ng-container *ngIf="headers?.buttons">
+                <button nz-button [nzType]="button.type" [nzShape]="button.shape" class="m-r-10" *ngFor="let button of headers?.buttons"> <i nz-icon [nzType]="button.icon" ></i>
+                    <span *ngIf="button.title">{{button.title}}</span></button>
+                    </ng-container>
             </div>
         </div>
     </div>
@@ -38,11 +35,14 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PageHeaderComponent implements OnInit {
+export class PageHeaderComponent implements OnInit  {
+    @Input() headers: headerOptions|undefined;
+ 
+    ngOnInit(): void {
+        console.log('-------headers---')
+      console.log(this.headers)
+    }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
+

@@ -20,9 +20,9 @@ getFieldsMultiple(){
   this.http
       .get<FormlyFieldConfig[]>('assets/data/form.json')
       .pipe(
-        mergeMap((fields) => {
-          return this.lookup._getCodeLookup(fields)
-        })
+        mergeMap((fields) =>  this.lookup.bindLookup(fields)
+        )
+        
       )
       .subscribe((result) => console.log('merged: ', result));
 //   this.httpClient
