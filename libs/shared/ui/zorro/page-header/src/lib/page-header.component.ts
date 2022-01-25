@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { headerOptions } from '..';
 
 @Component({
@@ -23,7 +23,7 @@ import { headerOptions } from '..';
                     </label>                   
                 </nz-radio-group> 
                 <ng-container *ngIf="headers?.buttons">
-                <button nz-button [nzType]="button.type" [nzShape]="button.shape" class="m-r-10" *ngFor="let button of headers?.buttons"> <i nz-icon [nzType]="button.icon" ></i>
+                <button nz-button [nzType]="button.type" [nzShape]="button.shape" class="m-r-10" *ngFor="let button of headers?.buttons" (click)="onClick(button.title)"> <i nz-icon [nzType]="button.icon" ></i>
                     <span *ngIf="button.title">{{button.title}}</span></button>
                     </ng-container>
             </div>
@@ -37,12 +37,15 @@ import { headerOptions } from '..';
 })
 export class PageHeaderComponent implements OnInit  {
     @Input() headers: headerOptions|undefined;
+    @Output() headeractions: EventEmitter<any> = new EventEmitter();
  
     ngOnInit(): void {
         console.log('-------headers---')
       console.log(this.headers)
     }
-
+onClick(name :string){
+this.headeractions.emit(name);
+}
 
 }
 

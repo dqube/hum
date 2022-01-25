@@ -13,7 +13,10 @@ import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 @Component({
   selector: 'hum-form',
   template: `
-    <hum-page-header [headers]="headers"></hum-page-header>
+    <hum-page-header
+      [headers]="headers"
+      (headeractions)="headeractions($event)"
+    ></hum-page-header>
     <form nz-form [nzLayout]="layout" [formGroup]="form" (ngSubmit)="submit()">
       <formly-form
         [form]="form"
@@ -29,9 +32,7 @@ import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 export class FormlyFormComponent implements OnInit {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  constructor() {
-   
-  }
+  constructor() {}
 
   @Input() form: FormGroup | FormArray;
 
@@ -51,10 +52,13 @@ export class FormlyFormComponent implements OnInit {
     this.layout = this.options?.formState?.['layout'];
   }
   submit() {
-    console.log(this.headers)
+    console.log(this.headers);
     //if (this.form.valid) {
     this.formSubmit.emit(this.model);
     // }
   }
-  
+  headeractions(name: string) {
+    console.log('header clicked');
+    console.log(name);
+  }
 }
